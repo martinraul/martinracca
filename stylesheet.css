@@ -126,8 +126,26 @@ name {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
-span.highlight {
-  background-color: #ffffd0;
+
+///////////Houdini extra-underline by Una////
+////////// https://houdini.how/# ////////////
+
+#subtitle {
+}
+
+@supports (background: paint(something)) {
+  span.highlight {
+    /* 
+      Optionally set property values. 
+      This can be done at root or local scope 
+    */ 
+    --extra-underlineNumber: 5; /* default: 3 */
+    --extra-underlineColor: #b78159; /* default: black */
+    --extra-underlineSpread: 15; /* default: 20 */
+    --extra-underlineWidth: 1; /* default: 2 */
+
+    background: paint(extra-superUnderline);
+  }
 }
 
 
